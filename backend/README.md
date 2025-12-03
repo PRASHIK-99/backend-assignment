@@ -1,140 +1,108 @@
-TaskMaster - Scalable Backend API
+TaskMaster – Scalable Backend API
 
-A secure, scalable REST API built with Node.js, Express, and MongoDB, featuring Role-Based Access Control (RBAC) and a React frontend.
+A secure, production-ready REST API built with Node.js, Express, and MongoDB, featuring Role-Based Access Control (RBAC) and a React dashboard for seamless interaction and testing.
 
 🚀 Features
 
-Authentication: Secure User Registration & Login (BCrypt password hashing).
+Authentication: Secure user registration & login using bcrypt password hashing
 
-Authorization: JWT-based protection with Role-Based Access (Admin vs User).
+Authorization: JWT-based protection with Admin/User role-based access
 
-Validation: Robust input validation using Joi middleware.
+Validation: Strong request validation powered by Joi middleware
 
-Security: HelmetJS for headers, CORS configured, secure error handling.
+Security:
 
-Documentation: Integrated Swagger UI.
+Helmet for secure HTTP headers
 
-Frontend: React + TailwindCSS dashboard for testing APIs.
+CORS protection
+
+Centralized & safe error handling
+
+Documentation: Fully integrated Swagger UI for API visualization
+
+Frontend: React + TailwindCSS dashboard for interacting with the API
 
 🛠️ Tech Stack
+Backend
 
-Backend: Node.js, Express.js
+Node.js
 
-Database: MongoDB (Mongoose ODM)
+Express.js
 
-Validation: Joi
+MongoDB + Mongoose
 
-Auth: JWT (JSON Web Tokens)
+JWT Authentication
 
-Frontend: React, TailwindCSS, Lucide Icons
+Joi Validation
+
+Frontend
+
+React
+
+TailwindCSS
+
+Lucide Icons
 
 📂 Project Structure
-
 /backend
-/src
-/config # DB & Swagger Config
-/controllers # Business Logic
-/middleware # Auth & Validation
-/models # Database Schemas
-/routes # API Routes
-/validators # Joi Schemas
-server.js # Entry Point
-/frontend # React UI
+  /src
+    /config        # Database & Swagger configuration
+    /controllers   # Business logic
+    /middleware    # Auth & validation middleware
+    /models        # Mongoose schemas
+    /routes        # API route handlers
+    /validators    # Joi validation schemas
+  server.js        # Backend entry point
+
+/frontend
+  # React UI (TailwindCSS + API testing dashboard)
 
 ⚡ Getting Started
-
 Prerequisites
 
-Node.js (v14+)
+Node.js (v14+ recommended)
 
-MongoDB (Local or Atlas URL)
+MongoDB (Local instance or Atlas)
 
-1. Backend Setup
-
+🔧 Backend Setup
 cd backend
 npm install
 
-# Create a .env file based on the example below
 
-npm run dev
-
-Environment Variables (.env):
+Create a .env file in the backend folder:
 
 PORT=5000
 MONGO_URI=your_mongodb_connection_string
 JWT_SECRET=your_jwt_secret
 
-2. Frontend Setup
 
+Run the backend:
+
+npm run dev
+
+🎨 Frontend Setup
 cd frontend
 npm install
 npm run dev
 
 📚 API Documentation
 
-Once the server is running, visit the auto-generated Swagger docs:
+Once the backend server is running, open Swagger UI:
+
 👉 http://localhost:5000/api-docs
 
 🧪 API Endpoints
-
-Method
-
-Endpoint
-
-Description
-
-Access
-
-POST
-
-/api/auth/register
-
-Register new user
-
-Public
-
-POST
-
-/api/auth/login
-
-Login user
-
-Public
-
-GET
-
-/api/tasks
-
-Get all tasks
-
-Private (User/Admin)
-
-POST
-
-/api/tasks
-
-Create task
-
-Private
-
-PUT
-
-/api/tasks/:id
-
-Update task
-
-Private
-
-DELETE
-
-/api/tasks/:id
-
-Delete task
-
-Private
-
+Method	Endpoint	Description	Access
+POST	/api/auth/register	Register new user	Public
+POST	/api/auth/login	Login user	Public
+GET	/api/tasks	Get all tasks	Private (User/Admin)
+POST	/api/tasks	Create task	Private
+PUT	/api/tasks/:id	Update task	Private
+DELETE	/api/tasks/:id	Delete task	Private
 📈 Scalability
 
-For details on how this system handles growth, caching strategies, and architecture decisions, please read SCALABILITY.md.
+For details on caching, system architecture, horizontal scaling, request optimization, and production readiness, refer to:
+
+👉 SCALABILITY.md
 
 Built for Backend Developer Internship Assignment.
